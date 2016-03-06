@@ -1,0 +1,22 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+platforms/
+plugins/
+.buildpath
+.htaccess
+.project
+.settings/
+composer.lock
+*.zip
+vendor/
+ionic.project
+.tmp
+.sass-cache
+<%= appPath %>/bower_components
+coverage
+*.swp
+*.swo
+*.log
+*.DS_Store
