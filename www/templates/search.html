@@ -2,11 +2,11 @@
   <ion-content>
     <label class="item item-input">
       <i class="icon ion-search placeholder-icon"></i>
-      <input type="search" placeholder="Search">
+      <input type="search" ng-model="q" placeholder="Search">
     </label>
-    <h2>Results</h2>
+
     <ion-list>
-      <ion-item ng-repeat="client in clients" href="#/app/client/{{client.id}}">
+      <ion-item ng-repeat="client in clients | filter:q as results" href="#/app/client/{{client.id}}">
         {{client.name}}
       </ion-item>
     </ion-list>

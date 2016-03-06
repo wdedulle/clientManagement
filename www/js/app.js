@@ -36,23 +36,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
       }
     }
   })
 
-  .state('app.clients', {
-      url: '/clients',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/clients.html',
-          controller: 'ClientsCtrl'
-        }
-      }
-  })
-
   .state('app.client', {
-      url: '/client',
+      url: '/client/:clientId',
       views: {
         'menuContent': {
           templateUrl: 'templates/client.html',

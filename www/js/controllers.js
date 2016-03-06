@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -6,8 +6,8 @@ angular.module('starter.controllers', [])
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
+  // $scope.$on('$ionicView.enter', function(e) {
+  // });
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -41,7 +41,16 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ClientsCtrl', function($scope) {
+.controller('ClientCtrl', function($scope, $stateParams, $ionicPopup) {	
+    $scope.saveClient = function() {
+      var alertPopup = $ionicPopup.alert({
+         title: 'Message',
+         template: 'Client is saved'
+      });
+    }
+})
+
+.controller('SearchCtrl', function($scope, $stateParams) {
   $scope.clients = [
     { name: 'Deulle', id: 1 },
     { name: 'Chill', id: 2 },
@@ -50,7 +59,4 @@ angular.module('starter.controllers', [])
     { name: 'Rap', id: 5 },
     { name: 'Cowbell', id: 6 }
   ];
-})
-
-.controller('ClientsCtrl', function($scope, $stateParams) {
 });
